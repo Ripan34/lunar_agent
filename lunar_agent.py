@@ -34,7 +34,7 @@ class LunarAgent:
             return action
 
     def update(self, episode, target_update_frequency):
-        if len(self.memory) > self.batch_size:
+        if len(self.memory) > 1000:
             states, actions, rewards, next_states, dones = self.memory.sample(self.batch_size)
             
             states = torch.FloatTensor(states)
